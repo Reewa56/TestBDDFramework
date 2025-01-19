@@ -1,2 +1,1 @@
-# TestBDDFramework
-Java BDD Test Automation
+This is a BDD Cucumber project using Java.
