@@ -10,8 +10,11 @@ public class BaseClass {
 
     public WebDriver Initializedriver(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");  // Run Chrome in headless mode
+        options.addArguments("--no-sandbox");  // Disable sandboxing (important for CI environments)
+        options.addArguments("--disable-gpu");  // Disable GPU hardware acceleration
+        options.addArguments("--disable-dev-shm-usage");  // Avoid issues with shared memory
+        options.addArguments("--remote-debugging-port=9222");
         driver = new ChromeDriver();
         return driver;
     }
